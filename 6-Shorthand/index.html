@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Xin chào các bạn</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Cách 1 -->
+        <button v-on:click="changeLink">click to change click</button>
+        <!-- Cách 2 -->
+        <button @click="changeLink">click to change click</button>
+        <a v-bind:href="linkVal">Link</a>
+
+    </div>
+<script>
+        new Vue({
+            el: '#app',
+            data: {
+                linkVal: 'https://www.facebook.com/honggam.mai.378/',
+
+            },
+            methods: {
+                changeLink:function(){
+                    this.linkVal = 'https://www.facebook.com/'
+                }
+            },
+        });
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Xin chào các bạn</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="vue.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+  
+    <div id="app">
+       <p>You are welcome</p>
+       <p v-if="xacdinh" >Yes, I am <span>doctor</span></p>
+       <p v-else="xacdinh">No, I am a teacher</p>
+       <button @click="xacdinh = !xacdinh">Change condition</button>
+
+       <template v-if="xacdinh" >
+        <div>Menu 1</div>
+        <div>Menu 1</div>
+        <div>Menu 1</div>
+        <div>Menu 1</div>
+        <div>Menu 1</div>
+        <div>Menu 1</div>
+        <div>Menu 1</div>
+       </template>
+       <template v-show="xacdinh" >
+        <div>Menu 1</div>
+        <div>Menu 1</div>
+        <div>Menu 1</div>
+        <div>Menu 1</div>
+        <div>Menu 1</div>
+        <div>Menu 1</div>
+        <div>Menu 1</div>
+       </template>
+       <!-- <p v-show="xacdinh">Test show element</p> -->
+      
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+              xacdinh: true,
+
+            },
+            
+        });
+    </script>
+
+
+</body>
+
+</html>

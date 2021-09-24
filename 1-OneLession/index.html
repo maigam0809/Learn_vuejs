@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Xin chào các bạn</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="obj">
+        <p v-html="testMaHTML"></p>
+        <p v-once>{{ noidung }} - {{ showPost() }} </p>
+        <p>{{ sayHello() }}</p>
+        <p>{{ showPost() }}</p>
+        <p>
+            <a v-bind:href="link" >My Facebook</a>
+        </p>
+       
+
+    </div>
+    <script>
+        // Tất cả dữ liệu truyền qua đều là dữ liệu thô
+        new Vue({
+            el: '#obj',
+            data: {
+                noidung: 'Đây là trang chủ',
+                title: "Bài viết",
+                slug: "Bài viết hdfbdsbc",
+                number: 2,
+                link: 'https://www.facebook.com/honggam.mai.378/',
+                testMaHTML: ' <a href="https.....dvgdvghsb">Get PassWord</a>'
+            },
+            methods: {
+                sayHello: function () {
+                    document.write("Say Hello");
+                },
+                showPost: function() {
+                    this.noidung = "Nội dung vừa cập nhật";
+                    return this.noidung;
+                }
+            }
+        });
+
+    </script>
+
+
+</body>
+
+</html>

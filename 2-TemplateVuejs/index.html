@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Xin chào các bạn</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="obj">
+        <div v-on:mouseover="tinhToaDo">
+            <h1>Bấm nút để tăng giá trị </h1>
+            <button v-on:click="tangGiaTri">Ấn đi</button>
+            <button v-on:click="dem++">Ấn đi theo javascript</button>
+            <p>Giá trị : {{ dem }}</p>
+            <p>Giá trị : {{ dem > 20 ? "Bạn đã vượt quá mức giới hạn" : "Bạn đang làm trong mức giới hạn"}}</p>
+            <span v-on:mouseover="dungChuot">Dừng sự kiện: cách 1</span>
+            <span v-on:mouseover.stop="">Dừng sự kiện: cách 2 sét trực tiếp</span>
+            <p>Toạ độ của chuột: {{ x }} / {{ y }}</p>
+        </div>
+
+        <div class="">
+            <!-- cách 1 -->
+            <input type="text" v-on:keyup.enter.space="banPhim" placeholder="Nhập từ bàn phím nào ...">
+            <!-- cách 2 viết -->
+            <input type="text" @keyup.enter.space="banPhim" placeholder="Nhập từ bàn phím nào ...">
+        </div>
+
+    </div>
+<script>
+        // Tất cả dữ liệu truyền qua đều là dữ liệu thô
+        new Vue({
+            el: '#obj',
+            data: {
+                dem: 0,
+                x: 0,
+                y: 0,
+
+            },
+            methods: {
+                tangGiaTri: function () {
+                    this.dem++;
+                },
+                tinhToaDo: function (event) {
+                    this.x = event.clientX;
+                    this.y = event.clientY;
+                },
+                dungChuot: function (event) {
+                    // Cách 1:
+                    event.stopPropagation();// Dừng sự kiện của event mouseover
+
+                },
+                banPhim: function (){
+                    alert("Hello baby");
+                }
+            }
+        });
+
+    </script>
+
+
+</body>
+
+</html>

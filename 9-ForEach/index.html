@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Xin chào các bạn</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="vue.js"></script>
+</head>
+<body>
+  
+    <div id="app">
+       <ul>
+           <li v-for="(menu, i) in menus">{{ menu }} với index là: {{ i }}</li>
+       </ul>
+       <template v-for="(menu, index) in menus">
+           <h3>{{ menu }}</h3>
+           <p>{{ index }}</p>
+       </template>
+       
+       <!-- Xét với khi nó là 1 object-> đối tượng -->
+       <ul>
+            
+        <li v-for="student in students">
+            <div href="" v-for="(key, value, index) in student">
+               {{ key }} :{{ value }} -> {{ index }}
+            </div>
+        </li>
+       </ul>
+
+
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+               menus:['Home', 'About', 'Blog', 'Contact'],
+               students:[
+                   {name: 'Tu', age: 26, class: 'CNTT'},
+                   {name: 'Gam', age: 21, class: 'CNTT'},
+                   {name: 'Chi', age: 23, class: 'CNTT'},
+                   {name: 'Ngoc', age: 23, class: 'CNTT'},
+               ]
+
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

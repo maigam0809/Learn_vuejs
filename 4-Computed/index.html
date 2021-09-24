@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Xin chào các bạn</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h3>Giá trị A: {{ tangA }}</h3>
+        <h3>Giá trị B: {{ tangB }}</h3>
+        <button v-on:click="a++">Tăng A</button>
+        <button v-on:click="b++">Tăng B</button>
+        <h3>Giá trị A: {{ tangAF() }}</h3>
+        <h3>Giá trị B: {{ tangBF() }}</h3>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+               a: 0,
+               b: 0,
+
+            },
+            computed:{
+                tangA: function (){
+                    console.log("Computed");
+                    console.log("Gọi function a");
+                    return this.a;
+                },
+                tangB: function (){
+                    console.log("Computed");
+                    console.log("Gọi function b");
+                    return this.b;
+                },
+            },
+            methods: {
+                tangAF: function (){
+                    console.log("methods");
+                    console.log("Gọi function a");
+                    return this.a;
+                },
+                tangBF: function (){
+                    console.log("methods");
+                    console.log("Gọi function b");
+                    return this.b;
+                },
+            }
+        });
+
+    </script>
+
+
+</body>
+
+</html>

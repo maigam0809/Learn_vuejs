@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Xin chào các bạn</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="vue.js"></script>
+    <style>
+        .vuong {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            display: inline-block;
+            margin: 10px;
+        }
+        .do {
+            background-color: red;
+        }
+        .xanhduong {
+            background: blue;
+        }
+        .xanhcay {
+            background: green;
+        }
+        .vang {
+            background: yellow;
+        }
+        .nau {
+            background: brown;
+        }
+        .hong {
+            background: pink;
+        }
+        .den {
+            background: black;
+        }
+        .tim {
+            background: purple;
+        }
+        .trang {
+            background: white;
+        }
+        .xam {
+            background: gray;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- phân biệt click giữa các ô với comput nếu k phải ô thứ 3 chuyển hết sang màu đỏ,
+    còn click vào ô thứ 3 thì chuyển sang  màu xanh. -->
+    <div id="app">
+        <div class="vuong" @click="quanLiDo = !quanLiDo" :class="{do: quanLiDo}"></div>
+        <div class="vuong" @click="quanLiDo = !quanLiDo" :class="{do: quanLiDo}"></div>
+        <div class="vuong" :class="[color, {do:quanLiDo}]"></div>
+        <hr>
+       <input type="text" v-model="color">
+
+    </div>
+    <script>
+        // Nhập gía trị của phép tính tổng thì ở ô thứ 3 sẽ chuyển sang màu xanh
+        // còn nếu trả lời thì ô thứ 3 chuyển sang màu đỏ
+        new Vue({
+            el: '#app',
+            data: {
+               quanLiDo:false,
+            //    quanLiXanhDuong:false,
+            //    quanLiXanhCay:false,
+               color:'xanhcay',
+
+            },
+            computed:{
+                divClasses: function(){
+                    return {
+                        do: this.do,
+                        xanhduong: this.quanLiDo,
+                    }
+                }
+
+            },
+            methods: {
+                changeLink:function(){
+                    
+                }
+            },
+        });
+    </script>
+
+
+</body>
+
+</html>

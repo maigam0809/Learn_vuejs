@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Xin chào các bạn</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="obj">
+        <input type="text" v-model="name" placeholder="Nhập từ bàn phím nào ...">
+        <p>{{ name }}</p>
+    </div>
+<script>
+        // Tất cả dữ liệu truyền qua đều là dữ liệu thô
+        new Vue({
+            el: '#obj',
+            data: {
+               name: 'Sky Albert',
+
+            },
+            methods: {
+               
+            }
+        });
+
+    </script>
+
+
+</body>
+
+</html>

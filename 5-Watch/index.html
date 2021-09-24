@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Xin chào các bạn</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{ diem }}</h1>
+    </div>
+<script>
+        // Tất cả dữ liệu truyền qua đều là dữ liệu thô
+        var app = new Vue({
+            el: '#app',
+            data: {
+                diem: 'Bạn A có môn toán là 7 Điểm.',
+
+            },
+            watch: {
+                diem: function(){
+                    // console.log("Điểm của bạn ấy đã được một giáo viên nào đó nhập vào rồi.");
+                    alert('Điểm của bạn ấy đã được một giáo viên nào đó nhập vào rồi.');
+                }
+               
+            }
+        });
+        app.diem = "Bạn A có môn toán 8đ điểm";
+    </script>
+
+
+</body>
+
+</html>
